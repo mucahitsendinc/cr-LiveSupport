@@ -1,1 +1,15 @@
 php_flag display_errors off
+
+RewriteEngine On
+RewriteCond %{HTTPS}  !=on
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([^/]+)$ index.php?sayfa=$1 [L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([^/]+)/([^/]+)$ index.php?sayfa=$1&parametre=$2&parametre2=$3&parametre3=$4 [L]
+
+Options All -Indexes
+### End CyberPanel Generated Rules.

@@ -13,14 +13,14 @@ if ($_SESSION['supporterLogin'] == "on") {
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="assets/css/panellogin.css" rel="stylesheet">
   <link href="assets/css/panel.css" rel="stylesheet">
-  <link rel="shortcut icon" href="assets/image/dehasoft.png">
+  <link rel="shortcut icon" href="assets/image/livesupportLogo.png">
 </head>
 
 <body>
 
   <div id="login">
     <div class="login-content">
-      <h1>Giriş Formu</h1>
+      <h1 style="margin:20px"></h1>
       <div>
         <a href="https://www.dehasoft.com.tr/" target="_BLANK">
           <img src="assets/image/dehasoft.png" alt="Logo">

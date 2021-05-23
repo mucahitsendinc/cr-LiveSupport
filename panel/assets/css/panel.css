@@ -36,8 +36,9 @@
   text-decoration: none;
   color:black;
   font-family: Kanit , sans-serif;
-  font-size:27px;
+  font-size:20px;
   display: flex;
+  justify-content: center;
   align-items: center;
   border-bottom:1px solid #000;
   box-shadow:0px 0px 5px #000;
@@ -62,10 +63,11 @@
 }
 .menu-container .menu-collepse ul li a{
   display: block;
+  position:relative;
   text-decoration: none;
   color:black;
   font-family:Roboto,sans-serif;
-  font-size:15px;
+  font-size:13px;
   background-color: rgba(255,255,255,.1);
   margin:5px;
   width:90%;
@@ -73,14 +75,50 @@
   text-align: center;
   transition: 400ms color;
 }
-.menu-container .menu-collepse ul li a:hover{
-  box-shadow:0px 0px 5px #000;
-  color:darkgoldenrod;
+
+.menu-container .menu-collepse ul li a i{
+  position:absolute;
+  left:15px;
+}
+
+.menu-container .menu-collepse ul li a:hover,a.active{
+  box-shadow:0px 0px 1px rgb(45, 75, 155);
+  color:rgb(88, 88, 88);
   font-weight: bold;
 }
+.menu-container .menu-collepse ul li a:hover::after , a.active::after{
+  content:'\f104';
+  position:absolute;
+  right:0;
+  padding-right:5px;
+  text-align: left;
+  Font-family: "Font Awesome 5 Free";
+}
+.menu-container .menu-collepse ul li a:hover::before , a.active::before{
+  content:'\f105';
+  position:absolute;
+  left:0;
+  padding-right:5px;
+  text-align: left;
+  Font-family: "Font Awesome 5 Free";
+}
+
+
 .fullscreen-menu-content{
   margin-left:15.5vw;
   width:84vw;
+}
+.menu-container .menu-brand::after{
+    content: 'Canlı Destek';
+  }
+.full-screen-message{
+  width: 84vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Kanit, sans-serif;
+  font-weight: bold;
 }
 footer{
   background-color: #eee;
@@ -102,11 +140,35 @@ footer h1 a{
 footer h1 a:hover{
   color:gold;
 }
-@media (max-width: 980px) {
+.container-fluid .row.pageinfo{
+  position: relative;
+  height: 80px;
+  border-bottom:.1px solid black;
+  padding-top:40px;
+}
+.container-fluid .row.pageinfo .title{
+  position: absolute;
+  left:0px;
+}
+.container-fluid .row.pageinfo .col-6{
+  position: relative;
+}
+.container-fluid .row.pageinfo .redirect{
+  position: absolute;
+  right:0px;
+}
+@media (max-width: 1000px) {
+  .container-fluid .row.pageinfo{
+    padding-top:10px;
+  }
   .fullscreen-menu-content{
     margin-left:0vw;
     margin-top:68px;
     width:100vw;
+  }
+  .full-screen-message{
+    width:100vw;
+    height: 70vh;
   }
   .menu-container {
     position: relative;
@@ -122,6 +184,9 @@ footer h1 a:hover{
     left:5vw;
     box-shadow:0px 0px 0px;
     }
+  .menu-container .menu-brand::after{
+    content: '';
+  }
   .menu-container .menu-collepse{
     display: none;
     position:absolute;
@@ -132,6 +197,7 @@ footer h1 a:hover{
     top:66px;
     background-color: #eee;
   }
+  
   .menu-container .menu-collepse ul li{
     width: 100vw;
     padding-left:5vw;
@@ -145,6 +211,7 @@ footer h1 a:hover{
   .menu-container .menu-button{
     display: block;
     position:absolute;
+    z-index:50;
     right: 5vw;
     font-size:33px;
     cursor: pointer;

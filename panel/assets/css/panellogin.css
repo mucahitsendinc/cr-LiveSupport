@@ -1,0 +1,101 @@
+body{
+  background-image: url("../image/bg.jpg");
+  background-repeat: no-repeat;
+  background-size:cover;
+}
+div#login{
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  font-family: Roboto, sans-serif;
+  justify-content: center;
+  align-items: center;
+  background-color:rgba(0,0,0,.4);
+}
+div#login div.login-content{
+  background-color: rgba(255, 255, 255, 0.767);
+  border-radius: 30px;
+  display: block;
+  width:50%;
+}
+div#login div.login-content div{
+  display: block;
+  width: 50%;float:left;
+}
+div#login div.login-content div a{
+  margin-left:15%;
+}
+div#login div.login-content div a img{
+  width: 70%;
+}
+div#login div.login-content   h1{
+  font-family: Kanit,sans-serif;
+  font-weight: bold;
+  text-align: center;
+  width: 100%;
+}
+div#login div.login-content div form{
+  width: 100%;
+}
+div#login div.login-content div form div#login-error{
+  width: 80%;
+  margin-left:8%;
+  color:#fff;
+  font-weight: bold;
+  margin-top:5px;
+  background-color: red;
+}
+
+div#login div.login-content div form label{
+  margin-left:8%;
+}
+div#login div.login-content div form input{
+  width: 80%;
+  padding:2%;
+  height: 30px;
+  margin-top:10px;
+  margin-left:8%;
+}
+div#login div.login-content div form input:focus{
+  outline:0;
+}
+div#login div.login-content div form button{
+  width: 85%;
+  cursor: pointer;
+  margin:15px 0px;
+  height: 30px;
+  background-color: #0380CB;
+  margin-left:7.5%;
+  color:#fff;
+  transition: 550ms background-color;
+}
+div#login div.login-content div form button:hover{
+  background-color: #009432;
+}
+@media (max-width: 780px) {
+  div#login div.login-content {
+    width: 95%;
+  }
+  div#login div.login-content div a img{
+    display:none;
+    width: 35%;
+  }
+  div#login div.login-content div{
+    width: 95%;
+  }
+  div#login div.login-content div form button{
+    width: 100%;
+  }
+  div#login div.login-content div form  div#login-error{
+    width: 100%;
+    margin-left:5%;
+    margin-top:15px;
+  }
+  div#login div.login-content div form input{
+    width: 100%;
+    margin-left:5%;
+  }
+  div#login div.login-content div form{
+    width: 90%;
+  }
+}

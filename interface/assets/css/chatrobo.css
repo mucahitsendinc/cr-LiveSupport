@@ -1,0 +1,538 @@
+/* font-family: 'Kanit', sans-serif; */
+
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@400&display=swap');
+
+/* font-family: 'Roboto', sans-serif; */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+}
+
+:root {
+    --chat: rgba(255, 255, 255, .04);
+    --chathover: rgba(255, 255, 255, .4);
+    --open: #FFF;
+    --transition: 550ms all;
+    --color: black;
+    --chatbackground: #DDD;
+}
+
+
+/* width */
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+
+/* Track */
+
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px #FFF9C4;
+    border-radius: 10px;
+}
+
+
+/* Handle */
+
+::-webkit-scrollbar-thumb {
+    background: #FFF;
+    border-radius: 10px;
+}
+
+
+/* Handle on hover */
+
+::-webkit-scrollbar-thumb:hover {
+    background: #FFF9C4;
+}
+
+.gizliInput {
+    position: fixed;
+    margin-top: -700vh;
+    margin-bottom: -700vw;
+}
+
+.commandtext {
+    font-weight: bold !important;
+    color: rgb(0, 140, 255) !important;
+}
+.danger-message{
+    background-color: red;
+}
+.green-message{
+    background-color: #27ae60;
+    width:100%;
+    margin-left:0%;
+    font-size:18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding:10px 0px;    
+}
+#error-message{
+    color:white;
+    margin-bottom:10px;
+    width: 90%;
+    margin-left:5%;
+}
+#chatrobo,
+#chatrobo-opened {
+    z-index: 100;
+    font-family: 'Kanit', sans-serif;
+}
+
+#chatrobo {
+    width: 55px;
+    height: 55px;
+    background-color: var(--chat);
+    border-radius: 150px;
+    padding: 15px;
+    cursor: pointer;
+    transition: var(--transition);
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+}
+
+#chatrobo:hover {
+    transform: scale(1.1);
+}
+
+#chatrobo img {
+    height: 100%;
+    width: 100%;
+}
+
+#chatrobo-opened {
+    display: none;
+    visibility: hidden;
+    height: auto;
+    width: 280px;
+    position: fixed;
+    bottom: 30px;
+    right: 15px;
+    transition: 350ms all;
+}
+
+#chatrobo-opened .chatrobo {
+    height: 300px;
+    width: 100%;
+    background-color: var(--chatbackground);
+}
+
+#chatrobo-opened .chatrobo .chatrobo-title {
+    font-size: 10px;
+    position: relative;
+    background-color: #4EB1FB;
+    color: white;
+    text-align: center;
+}
+
+#chatrobo-opened .chatrobo .chatrobo-title .chatrobo-closeBtn {
+    position: absolute;
+    font-size: 14px;
+    height: 25px;
+    width: 35px;
+    cursor: pointer;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    right: 0;
+    transition: var(--transition);
+}
+
+#chatrobo-opened .chatrobo .chatrobo-title #chatrobo-settings h1 {
+    background-color: #ff4d4d;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#chatrobo-opened .chatrobo .chatrobo-title #chatrobo-settings #chatrobo-settings-content .flags {
+    font-size: 45px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+#chatrobo-opened .chatrobo .chatrobo-title #chatrobo-settings #chatrobo-settings-content .flags.current {
+    outline: 2px solid #b8e994;
+}
+
+#chatrobo-opened .chatrobo .chatrobo-title #chatrobo-settings #chatrobo-settings-content .flags.current:hover {
+    outline: 2px solid #b8e994;
+}
+
+#chatrobo-opened .chatrobo .chatrobo-title #chatrobo-settings #chatrobo-settings-content .flags:hover {
+    outline: 1px solid #b8e994;
+}
+
+#chatrobo-opened .chatrobo .chatrobo-title #chatrobo-settings #chatrobo-settings-content {
+    font-size: 15px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, .6);
+}
+#chatrobo-opened .chatrobo .chatrobo-title #chatrobo-settings #chatrobo-settings-content input,textarea{
+    width: 90%;
+    height: 25px;
+    font-size:12px;
+    margin-top:10px;
+    padding-left:10px;
+}
+    
+#chatrobo-opened .chatrobo .chatrobo-title #chatrobo-settings #chatrobo-settings-content textarea{
+    resize: none;
+    height: 70px;
+}
+#chatrobo-opened .chatrobo .chatrobo-title #chatrobo-settings #chatrobo-settings-content button{
+    width: 90%;
+    border:0px;
+    outline:0px;
+    cursor: pointer;
+    font-size:15px;
+    padding:5px;
+    background-color: #7bed9f;
+}
+#chatrobo-opened .chatrobo .chatrobo-title #chatrobo-settings #chatrobo-settings-content button:hover{
+    background-color: #2ed573;
+}
+
+#chatrobo-opened .chatrobo .chatrobo-title #chatrobo-settings #chatrobo-settings-content input:focus,textarea:focus{
+    outline:0px;
+    border: .1px solid #ff4d4d;
+}
+#chatrobo-opened .chatrobo .chatrobo-title #chatrobo-settings {
+    display: none;
+    width: 100%;
+    height: 335px;
+    position: absolute;
+    top: 0;
+    background-color: #4b4b4b;
+    
+    z-index: 150;
+}
+
+
+#chatrobo-opened .chatrobo .chatrobo-title #chatrobo-settings i {
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    font-size: 20px;
+    padding: 7px;
+    border-radius: 150px;
+    cursor: pointer;
+}
+
+#chatrobo-opened .chatrobo .chatrobo-title #chatrobo-settings i:hover {
+    background-color: rgba(0, 0, 0, .1);
+}
+
+#chatrobo-opened .chatrobo .chatrobo-title .chatrobo-settingsBtn {
+    position: absolute;
+    font-size: 14px;
+    height: 25px;
+    width: 35px;
+    cursor: pointer;
+    top: 0;
+    right: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+}
+
+#chatrobo-opened .chatrobo .chatrobo-title .chatrobo-settingsBtn:hover {
+    box-shadow: 0px 0px 4px white;
+    background-color: #00c3ff;
+}
+
+#chatrobo-opened .chatrobo #chatrobo-goback {
+    visibility: hidden;
+    font-size: 13px;
+    height: 20px;
+    position: relative;
+    background-color: rgba(0, 255, 76, 0.123);
+    color: #444;
+    text-align: center;
+    cursor: pointer;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    transition: var(--transition);
+    --animate-delay: 0.1s;
+}
+
+#chatrobo-opened .chatrobo #chatrobo-goback:hover {
+    color: #000;
+    background-color: rgba(9, 184, 62, .3);
+}
+
+#chatrobo-opened .chatrobo .chatrobo-title .chatrobo-closeBtn:hover {
+    box-shadow: 0px 0px 6px 0px red;
+    background-color: red;
+}
+
+#chatrobo-opened .chatrobo .chatrobo-messages {
+    height: 250px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    font-family: 'Roboto', sans-serif;
+    --animate-duration: .3s;
+}
+
+#chatrobo-opened .chatrobo .chatrobo-messages img.loading {
+    height: 10px;
+    padding: 20px 20px;
+}
+
+#chatrobo-opened .chatrobo .sender {
+    border-radius: 10px 0px 10px 10px;
+    background-color: #DCF8C6;
+}
+
+#chatrobo-opened .chatrobo .send {
+    background-color: #FFF;
+    border-radius: 0px 10px 10px 10px;
+}
+
+#chatrobo-opened .chatrobo .send button {
+    padding: 0px;
+    outline: 0px;
+    border: 0;
+    width: 45%;
+    margin: 1%;
+    padding: 4%;
+    background-color: #fff;
+    cursor: pointer;
+    color: white;
+    transition: var(--transition);
+}
+
+#chatrobo-opened .chatrobo .send button:hover,
+button:focus {
+    color: rgb(0, 0, 0);
+    transform: scale(.95);
+}
+
+#chatrobo-opened .chatrobo .send .green:hover,
+.green:focus {
+    box-shadow: 0px 0px 20px 0px #00ffc3;
+}
+
+#chatrobo-opened .chatrobo .send .primary:hover,
+.primary:focus {
+    box-shadow: 0px 0px 20px 0px #00c3ff;
+}
+
+#chatrobo-opened .chatrobo .send .red:hover,
+.red:focus {
+    box-shadow: 0px 0px 20px 0px #ff0000;
+}
+
+#chatrobo-opened .chatrobo .send .orange:hover,
+.orange:focus {
+    box-shadow: 0px 0px 20px 0px #ff9500;
+}
+
+#chatrobo-opened .chatrobo .send .green {
+    background-color: #33d9b2;
+}
+
+#chatrobo-opened .chatrobo .send .primary {
+    background-color: #34ace0;
+}
+
+#chatrobo-opened .chatrobo .send .red {
+    background-color: #ff5252;
+}
+
+#chatrobo-opened .chatrobo .send .orange {
+    background-color: #ffb142;
+}
+
+#chatrobo-opened .chatrobo .chatrobo-baloon {
+    margin: 10px;
+    box-shadow: 0px .5px 1px #000;
+    word-wrap: break-word;
+}
+
+#chatrobo-opened .chatrobo .chatrobo-baloon .commands {
+    cursor: pointer;
+    color: rgb(40, 98, 146);
+    width: 100%;
+    transition: 300ms all;
+    ;
+}
+
+#chatrobo-opened .chatrobo .chatrobo-baloon .commands:hover {
+    font-weight: bold;
+    color: rgb(0, 140, 255)
+}
+
+#chatrobo-opened .chatrobo .chatrobo-baloon p {
+    padding: 5px;
+}
+
+#chatrobo-opened .chatrobo .chatrobo-baloon .sender-title a {
+    width: 300px;
+    text-align: left;
+    text-decoration: none;
+    font-weight: bold;
+    padding-left: 5px;
+    font-size: 12px;
+}
+
+#chatrobo-opened .chatrobo .chatrobo-messageform {
+    width: 280px;
+    margin: 0;
+    padding: 0;
+    background-color: #ddd;
+}
+
+#chatrobo-opened .chatrobo .chatrobo-messageform textarea {
+    width: 230px;
+    height: 30px;
+    background-color: rgb(240, 240, 240);
+    resize: none;
+    padding: 0px;
+    border: 0px;
+    margin: 0px;
+    float: left;
+    padding: 0px 10px;
+}
+
+#chatrobo-opened .chatrobo .chatrobo-messageform textarea:focus {
+    outline: 0px;
+    -webkit-box-shadow: inset 0px 0px 110px -77px rgba(0, 0, 0, 1);
+    -moz-box-shadow: inset 0px 0px 110px -77px rgba(0, 0, 0, 1);
+    box-shadow: inset 0px 0px 110px -77px rgba(0, 0, 0, 1);
+    background-color: #DCF8C6;
+    ;
+}
+
+#chatrobo-opened .chatrobo .chatrobo-messageform button {
+    width: 30px;
+    height: 30px;
+    padding: 0px;
+    border: 0px;
+    margin: 0px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+#chatrobo-opened .chatrobo .chatrobo-messageform button:hover {
+    box-shadow: #000;
+    background-color: #09b83e;
+    color: white;
+}
+
+@media (max-width: 991px) {
+  #chatrobo-opened {
+    left:2.5vw;
+  }
+    #chatrobo-opened .chatrobo .chatrobo-messageform {
+        width: 95vw;
+        /*280*/
+    }
+    #chatrobo-opened .chatrobo .chatrobo-messageform textarea {
+        width: 85vw;
+        padding: 1vw;
+        margin: 0;
+        height: 10vw;
+        /*230*/
+    }
+    #chatrobo-opened .chatrobo .chatrobo-messageform button {
+        width: 8vw;
+        height: 12vw;
+        /*30*/
+    }
+    #chatrobo-opened .chatrobo .chatrobo-baloon .sender-title a {
+        width: 95vw;
+        /*300*/
+    }
+    #chatrobo-opened .chatrobo .chatrobo-title #chatrobo-settings h1 {
+        height: 60px;
+        ;
+    }
+    #chatrobo-opened .chatrobo .chatrobo-title #chatrobo-settings #chatrobo-settings-content input,textarea{
+        height: 60px;
+        font-size:22px;
+    }
+    #chatrobo-opened .chatrobo .chatrobo-title #chatrobo-settings #chatrobo-settings-content button{
+        font-size:20px;
+        padding:10px;
+    }
+    #chatrobo-opened .chatrobo .chatrobo-title #chatrobo-settings #chatrobo-settings-content textarea{
+        height: 120px;
+    }
+    #chatrobo-opened .chatrobo .chatrobo-title #chatrobo-settings #chatrobo-settings-content .flags {
+        font-size: 100px;
+    }
+    #chatrobo-opened .chatrobo #chatrobo-goback {
+        height: 30px;
+        font-size: 16px;
+    }
+    #chatrobo-opened .chatrobo .chatrobo-messages {
+        height: 50vh;
+        background-color: #ddd;
+    }
+    #chatrobo-opened .chatrobo .chatrobo-title {
+        font-size: 15px;
+    }
+    #chatrobo-opened .chatrobo .chatrobo-messages .chatrobo-baloon {
+        font-size: 17px;
+    }
+    #chatrobo-opened .chatrobo {
+        width: 95vw;
+        /*300*/
+    }
+    #chatrobo-opened .chatrobo {
+        bottom: 50vh;
+    }
+    #chatrobo-opened .chatrobo .send button {
+        font-size: 16px;
+        width: 100%;
+        margin: 0%;
+        margin-top: 1%;
+        padding: 1%;
+    }
+    #chatrobo-opened .chatrobo .chatrobo-title .chatrobo-settingsBtn {
+        font-size: 18px;
+        width: 50px;
+        height: 40px;
+        left: 0;
+    }
+    #chatrobo-opened .chatrobo .chatrobo-title #chatrobo-settings {
+        height: calc(65vh + 55px);
+    }
+    #chatrobo-opened .chatrobo .chatrobo-title #chatrobo-settings i {
+        font-size: 34px;
+        padding: 10px;
+    }
+    #chatrobo-opened .chatrobo .chatrobo-title .chatrobo-closeBtn {
+        position: absolute;
+        font-size: 18px;
+        width: 50px;
+        height: 40px;
+        cursor: pointer;
+        top: 0;
+        right: 0;
+        transition: var(--transition);
+    }
+}
+
+@media (max-width: 855px) {
+    #chatrobo-opened .chatrobo .chatrobo-title #chatrobo-settings {
+        height: calc(63vh + 55px);
+    }
+}
+
+@media (max-width: 622px) {
+    #chatrobo-opened .chatrobo .chatrobo-title #chatrobo-settings {
+        height: calc(60vh + 55px);
+    }
+}

@@ -14,7 +14,7 @@
 
 
 
-    <script src="http://localhost/dehasoft/livesupport/panel/assets/js/chatrobo.js"></script>
+    <script src="http://localhost:8080/projeler/ozel/cr-LiveSupport/panel/assets/js/chatrobo.js"></script>
 </body>
 
 </html>

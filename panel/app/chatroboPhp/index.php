@@ -39,9 +39,9 @@ if (isset($_POST['newmessage'])) {
         echo 'Geçerli bir email adresi girin!';
     }else{
        // echo strpos($url, $URL_REF_HOST).'..'.$URL_REF_HOST.'--'. strstr($url, $URL_REF_HOST);die;
-      
+        
         include 'connect.php';
-        $izinKontrol = $db->query("select count(*) from access_permissions where url='".$url."' and permission=1")->fetchColumn();
+        $izinKontrol = $db->query("select count(*) from access_permissions where access_url='".$url."' and permission='admin'")->fetchColumn();
         $kontrol=$db->query("select count(*) from offline_messages where status=0 and sender_ip='".md5(getUserIP())."'")->fetchColumn();
         
         if ($izinKontrol>0 && urlCheck($url)=="true" && strpos($url,$URL_REF_HOST)) {
@@ -62,7 +62,7 @@ if (isset($_POST['newmessage'])) {
                 }
             }
         }else{
-            echo 'Uygulamayı bu sitede kullanabilmek için gerekli yetkiniz bulunmamaktadır.'.$URL_REF_HOST.'--'. strstr($url, $URL_REF_HOST);
+            echo 'Uygulamayı bu sitede kullanabilmek için gerekli yetkiniz bulunmamaktadır. ->'.$url;
         }
     }
     die;

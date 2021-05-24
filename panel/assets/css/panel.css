@@ -84,7 +84,7 @@
 .menu-container .menu-collepse ul li a:hover,a.active{
   box-shadow:0px 0px 1px rgb(45, 75, 155);
   color:rgb(88, 88, 88);
-  font-weight: bold;
+  font-weight: bold;cursor: pointer;
 }
 .menu-container .menu-collepse ul li a:hover::after , a.active::after{
   content:'\f104';
@@ -121,9 +121,11 @@
   font-weight: bold;
 }
 footer{
+
   background-color: #eee;
   box-shadow:0px 0px 1px 0px #000;
   display: block;
+
 }
 footer h1{
   text-align: center;
@@ -140,22 +142,36 @@ footer h1 a{
 footer h1 a:hover{
   color:gold;
 }
-.container-fluid .row.pageinfo{
+.main-container{
+  width: 100%;
   position: relative;
-  height: 80px;
-  border-bottom:.1px solid black;
   padding-top:40px;
 }
-.container-fluid .row.pageinfo .title{
-  position: absolute;
-  left:0px;
+.main-container .redirect {
+  width: 100%;
+  font-family:Kanit,sans-serif;
+  border-bottom:.1px solid #dfe6e9;  
+  height: 50px;
 }
-.container-fluid .row.pageinfo .col-6{
-  position: relative;
-}
-.container-fluid .row.pageinfo .redirect{
+
+.main-container .redirect .title,.location{
   position: absolute;
-  right:0px;
+  top:50px;cursor: pointer;
+  font-weight: bold;
+}
+.main-container .redirect .title{
+  font-weight: 500;
+  left:25px;
+}
+.main-container .redirect .location{
+  right:25px;
+}
+.main-container .redirect .location a{
+  font-weight: 500;
+}
+.main-container .content{
+  width: 100%;
+  margin:10px 0px;
 }
 @media (max-width: 1000px) {
   .container-fluid .row.pageinfo{
@@ -217,7 +233,7 @@ footer h1 a:hover{
     cursor: pointer;
   }
 }
-@media (min-width: 980px) {
+@media (min-width: 1000px) {
   .menu-container .menu-collepse{
     display: block !important;
   }

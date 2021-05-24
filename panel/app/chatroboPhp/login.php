@@ -7,10 +7,13 @@ session_start();
 error_reporting(E_ERROR | E_PARSE);
 include 'connect.php';
 include 'functions.php';
+
 if($_SESSION['supporterLogin']=="on"){
+  
   echo 'success';
 }else if (isset($_POST['login']) ) {
   //print_r($_POST);
+  
   $username= securityPost($_POST['login']['username']);
   $password= (securityPost($_POST['login']['password']));
   $girisKontrol= $db->query("select count(*) from supporter where supporter_username='" . $username . "' and supporter_password='" .md5($password). "'")->fetchColumn();
@@ -32,6 +35,6 @@ if($_SESSION['supporterLogin']=="on"){
   }
 
 }else{
-  header('Location:index.php');
+  //header('Location:index.php');
 }
 ?>

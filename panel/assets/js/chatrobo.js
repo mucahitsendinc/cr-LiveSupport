@@ -1,15 +1,15 @@
 var script = document.createElement('script');
-script.src = 'http://localhost/dehasoft/livesupport/panel/assets/js/jquery.min.js';
+script.src = 'http://localhost:8080/projeler/ozel/cr-LiveSupport/panel/assets/js/jquery.min.js';
 script.type = 'text/javascript';
 document.getElementsByTagName('head')[0].appendChild(script);
 
 setTimeout(() => {
-    $('head').append('<link rel="stylesheet" type="text/css" href="http://localhost/dehasoft/livesupport/panel/assets/vendor/fontawesome/css/fontawesome-all.min.css">');
-    $('head').append('<link rel="stylesheet" type="text/css" href="http://localhost/dehasoft/livesupport/panel/assets/vendor/flag-icon/css/flag-icon.min.css">');
-    $('head').append('<link rel="stylesheet" type="text/css" href="http://localhost/dehasoft/livesupport/panel/assets/css/chatrobo.css?v=1">');
-    $('head').append('<link rel="stylesheet" type="text/css" href="http://localhost/dehasoft/livesupport/panel/assets/vendor/animate/animate.min.css">');
+    $('head').append('<link rel="stylesheet" type="text/css" href="http://localhost:8080/projeler/ozel/cr-LiveSupport/panel/assets/vendor/fontawesome/css/fontawesome-all.min.css">');
+    $('head').append('<link rel="stylesheet" type="text/css" href="http://localhost:8080/projeler/ozel/cr-LiveSupport/panel/assets/vendor/flag-icon/css/flag-icon.min.css">');
+    $('head').append('<link rel="stylesheet" type="text/css" href="http://localhost:8080/projeler/ozel/cr-LiveSupport/panel/assets/css/chatrobo.css?v=1">');
+    $('head').append('<link rel="stylesheet" type="text/css" href="http://localhost:8080/projeler/ozel/cr-LiveSupport/panel/assets/vendor/animate/animate.min.css">');
 }, 100);
-var url = 'http://localhost/dehasoft/livesupport/panel/app/chatroboPhp/index.php';
+var url = 'http://localhost:8080/projeler/ozel/cr-LiveSupport/panel/app/chatroboPhp/index.php';
 //var url = 'http://2gce.bumpara.net/panel/app/chatroboPhp/index.php';
 var chatrobo = 'chatrobo';
 var chatroboscreen = 'chatrobo-opened';
@@ -29,7 +29,7 @@ var lastScrollTop = 0;
 setTimeout(() => {
     $(document).ready(function() {
         
-        document.body.innerHTML = document.body.innerHTML + '<div id="chatrobo" class="animate__animated animate__rubberBand"><img src="http://localhost/dehasoft/livesupport/panel/assets/image/livesupportLogo.png" alt="Chat Robo"></div><div id="chatrobo-opened" class="animate__animated"><div class="chatrobo"><div class="chatrobo-title" id="chatrobo-title"><h1 id="title-text">Canlı Destek</h1><div class="chatrobo-closeBtn" id="chatroboClosebtn" onclick="closeChatRobo()"><i class="fas fa-times"></i></div><div id="chatrobo-settings" class="animate__animated"><i class="fas fa-long-arrow-alt-left" id="chatrobo-settings-closeBtn" onclick="closeChatRobo()"></i><h1 id="chatrobo-settings-h1">Çevrim Dışı</h1><div id="chatrobo-settings-content"> <input type="text" name="name" id="offlineName" placeholder="Ad"> <input id="offlineEmail" type="email" name="email" placeholder="Email"><textarea id="offlineMessage" name="message" rows="5" placeholder="Mesaj"></textarea><div id="error-message"></div><button  onclick="offlineSend()" id="offlineSender">Gönder</button></div></div></div><div class="chatrobo-messages" id="chatrobo-messages"></div><div class="chatrobo-messageform "><div id="chatrobo-goback" class="animate__animated" onclick="chatScroll()">Son Mesajlar <i class="fas fa-arrow-down"></i></div><form action="" id="chatroboForm" method="post"><textarea name="message" id="message" rows="2" placeholder="Merhaba ile başla..."></textarea><button type="submit" value="1"><i class="fas fa-paper-plane"></i></button></form></div></div></div>';
+        document.body.innerHTML = document.body.innerHTML + '<div id="chatrobo" class="animate__animated animate__rubberBand"><img src="http://localhost:8080/projeler/ozel/cr-LiveSupport/panel/assets/image/livesupportLogo.png" alt="Chat Robo"></div><div id="chatrobo-opened" class="animate__animated"><div class="chatrobo"><div class="chatrobo-title" id="chatrobo-title"><h1 id="title-text">Canlı Destek</h1><div class="chatrobo-closeBtn" id="chatroboClosebtn" onclick="closeChatRobo()"><i class="fas fa-times"></i></div><div id="chatrobo-settings" class="animate__animated"><i class="fas fa-long-arrow-alt-left" id="chatrobo-settings-closeBtn" onclick="closeChatRobo()"></i><h1 id="chatrobo-settings-h1">Çevrim Dışı</h1><div id="chatrobo-settings-content"> <input type="text" name="name" id="offlineName" placeholder="Ad"> <input id="offlineEmail" type="email" name="email" placeholder="Email"><textarea id="offlineMessage" name="message" rows="5" placeholder="Mesaj"></textarea><div id="error-message"></div><button  onclick="offlineSend()" id="offlineSender">Gönder</button></div></div></div><div class="chatrobo-messages" id="chatrobo-messages"></div><div class="chatrobo-messageform "><div id="chatrobo-goback" class="animate__animated" onclick="chatScroll()">Son Mesajlar <i class="fas fa-arrow-down"></i></div><form action="" id="chatroboForm" method="post"><textarea name="message" id="message" rows="2" placeholder="Merhaba ile başla..."></textarea><button type="submit" value="1"><i class="fas fa-paper-plane"></i></button></form></div></div></div>';
 
     
     
@@ -64,7 +64,7 @@ setTimeout(() => {
                     }
                         
                         
-                        //http://localhost/dehasoft/livesupport/panel/
+                        //http://localhost:8080/projeler/ozel/cr-LiveSupport/panel/
                 },
                 error:function(error){
                     console.log(error);

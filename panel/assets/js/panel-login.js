@@ -6,6 +6,7 @@ $(document).ready(function(){
         username:document.getElementById('username').value,
         password:document.getElementById('password').value
     }
+console.log('asd'); 
     $.ajax({
         type: "POST",
         url: 'app/chatroboPhp/login.php',

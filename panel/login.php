@@ -38,9 +38,9 @@ if ($_SESSION['supporterLogin'] == "on") {
       </div>
     </div>
   </div>
-  <script src="assets/js/jquery.min.js"></script>
-  <script src="assets/js/panel-login.js"></script>
-  <script src="assets/js/loading.js"></script>
+  <script src="<?php echo $url; ?>assets/js/jquery.min.js"></script>
+  <script src="<?php echo $url; ?>assets/js/panel-login.js"></script>
+  <script src="<?php echo $url; ?>assets/js/loading.js"></script>
 </body>
 
 </html>

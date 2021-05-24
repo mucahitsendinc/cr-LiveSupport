@@ -1,0 +1,75 @@
+.widgets-row{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.card{
+    position: relative;
+    width: 23%;
+    margin:1%;
+    padding:1% .5%;
+    background-color: #ecf0f1;
+    box-shadow: 0px 0px 5px #dfe6e9;
+}
+.card .card-title-top{
+    position: absolute;
+    width: 95%;
+    font-size:18px;
+    top:10px;
+    font-family:Kanit,sans-serif;
+    text-align: center;
+}
+.card .card-title-bottom{
+    position: absolute;
+    width: 95%;
+    font-size:18px;
+    bottom:10px;
+    font-family:Kanit,sans-serif;
+    text-align: center;
+}
+.card .card-content{
+    width: 100%;
+    height: 140px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card .card-content .card-counter{
+    font-family:Roboto,sans-serif;
+    font-weight: normal;
+    font-size:80px;
+}
+.card .card-icon-left{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size:34px;
+    color:#fff;
+    position: absolute;
+    width: 20%;
+    height: 100%;
+    left:0;
+    background-color: rgba(0,0,0,.2);
+}
+.card .card-icon-text{
+    position: absolute;
+    width: 70%;
+    padding:5% 0px;
+    height: 100%;
+    font-family: Roboto,sans-serif;
+    font-size:15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size:24px;
+    right: 0;
+}
+@media (max-width: 1000px) {
+    .widgets{
+        display: block;
+    }
+    .card{
+        width: 90%;
+        margin-left:2.5%;
+    }
+}

@@ -1,6 +1,6 @@
 <?php
 session_start();
-$url= 'http://localhost/dehasoft/livesupport/panel/';
+$url= 'http://localhost:8080/projeler/ozel/cr-LiveSupport/panel/';
 if ($_SESSION['supporterLogin'] != "on") {
   header("Location:login.php");
   die;

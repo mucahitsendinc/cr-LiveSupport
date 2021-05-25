@@ -9,6 +9,7 @@
   <link href="<?php echo $url; ?>assets/css/panel.css" rel="stylesheet">
   <link href="<?php echo $url; ?>assets/css/widgets.css" rel="stylesheet">
   <link href="<?php echo $url; ?>assets/vendor/fontawesome/css/fontawesome-all.min.css" rel="stylesheet">
+  <link href="<?php echo $url; ?>assets/vendor/bootstrap/grid.css" rel="stylesheet">
 
 </head>
 

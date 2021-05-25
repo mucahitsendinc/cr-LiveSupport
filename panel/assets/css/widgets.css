@@ -1,13 +1,16 @@
 .widgets-row{
     display: flex;
     align-items: center;
-    justify-content: center;
 }
 .card{
     position: relative;
-    width: 23%;
+    width: 98%;
+    height: 140px;
     margin:1%;
-    padding:1% .5%;
+    padding:2% .5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: #ecf0f1;
     box-shadow: 0px 0px 5px #dfe6e9;
 }
@@ -29,12 +32,10 @@
 }
 .card .card-content{
     width: 100%;
-    height: 140px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    
+    
 }
-.card .card-content .card-counter{
+.card  .card-counter{
     font-family:Roboto,sans-serif;
     font-weight: normal;
     font-size:80px;
@@ -66,7 +67,7 @@
 }
 @media (max-width: 1000px) {
     .widgets{
-        display: block;
+        display: block !important;
     }
     .card{
         width: 90%;

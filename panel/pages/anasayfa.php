@@ -9,45 +9,34 @@
   </div>
   <div class="content">
     <!-- İÇERİK -->
-    <div class="widgets-row">
-      <div class="card color">
-        <div class="card-content">
-          <div class="card-counter">5</div>
-        </div>
-        <div class="card-title-bottom">Site barınıyor</div>
-      </div>
-      
-      <div class="card color">
-        <div class="card-content">
-          <div class="card-counter">18</div>
-        </div>
-        <div class="card-title-bottom">Canlı destek veren kullanıcı</div>
-      </div>
-      <div class="card color">
-        <div class="card-content">
-          <div class="card-counter">200000</div>
-        </div>
-        <div class="card-title-bottom">Adet günlük mesaj limiti</div>
-      </div>
-      <div class="card color">
-        <div class="card-content">
-          <div class="card-counter">718</div>
-        </div>
-        <div class="card-title-bottom">Adet iletilmiş mesaj</div>
-      </div>
-    </div>
-
-    <div class="widgets-row">
-       <div class="card">
-          <div class="card-content">
-            <div class="card-icon-left"><i class="fas fa-home"></i></div>
-            <div class="card-icon-text">
-              DehaSoft Canlı Destek Servisi
+      <div class="container-fluid">
+        <div class="row">
+          
+          <div class="col-12 col-lg-3 col-md-4">
+            <div class="card">
+              <div class="card-icon-left"><i class="fas fa-home"></i></div>
+              <div class="card-icon-text">DehaSoft Canlı Destek Servisi</div>
             </div>
           </div>
-        </div>
-      
+          <div class="col-12 col-lg-3 col-md-4">
+            <div class="card color">
+              <div class="card-counter">5</div>
+              <div class="card-title-bottom">Site barınıyor</div>
+            </div>
+          </div>
+          <div class="col-12 col-lg-3 col-md-4">
+            <div class="card color">
+              <div class="card-counter">18</div>
+              <div class="card-title-bottom">Canlı destek veren kullanıcı</div>
+            </div>
+          </div>
+          <div class="col-12 col-lg-3 col-md-4">
+            <div class="card color">
+              <div class="card-counter">718</div>
+              <div class="card-title-bottom">Adet iletilmiş mesaj</div>
+            </div>
+          </div>
+      </div>
     </div>
-
   </div>
 </div>

@@ -31,6 +31,7 @@ if($_SESSION['supporterLogin']=="on"){
   }else{
     $_SESSION['supporterLogin']="on";
     $_SESSION['supporter_username'] = $username;
+   
     echo 'success';
   }
 

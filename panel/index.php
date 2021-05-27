@@ -1,51 +1,21 @@
 <?php
-session_start();
-$url= 'http://localhost:8080/projeler/ozel/cr-LiveSupport/panel/';
-if ($_SESSION['supporterLogin'] != "on") {
-  header("Location:login.php");
-  die;
-}
-require 'pages/static/header.php';
-?>
-<div class="fullscreen-menu-content">
-<?php
-switch ($_GET['sayfa']) {
-  case '':
-    require 'pages/anasayfa.php';
-    break;
-  case 'anasayfa':
-    require 'pages/anasayfa.php';
-    break;
-  case 'profil':
-    require 'pages/profil.php';
-    break;
-  case 'bildirim':
-    require 'pages/bildirim.php';
-    break;
-  case 'canli':
-    require 'pages/canli.php';
-    break;
-  case 'siteizni':
-    require 'pages/siteizni.php';
-    break;
-  case 'hesapyonetimi':
-    require 'pages/hesapyonetimi.php';
-    break;
-  case 'cevrimdisi':
-    require 'pages/cevrimdisi.php';
-    break;
-  case 'cikis':
-    session_start();
-    session_unset();
-    session_destroy();
-    header('Location:login.php');
-    break;
-  default:
-    echo '<div class="full-screen-message"><h1>404 Sayfa Bulunamadı!</h1></div>';
-    break;
-}
-?>
-</div>
-<?php
-require 'pages/static/footer.php';
+  $_GET['sayfa'] = isset($_GET['sayfa']) ?  $_GET['sayfa'] : 'anasayfa' ;
+  session_start();
+  include 'app/chatroboPhp/config.php';
+  include 'app/chatroboPhp/functions.php'; 
+  login_check($_SESSION['supporterLogin']);
+  require $pages.'static/header.php';
+
+  if ($klasor = opendir($pages)) {
+    while (false !== ($girdi = readdir($klasor))) {
+      if ((str_replace(".php","", $girdi))== $_GET['sayfa']) {
+        require $pages. $girdi;$dosyaSayisi++;
+      }
+    }
+    closedir($klasor);
+  }
+  echo isset($dosyaSayisi) ? ''  : '<div class="full-screen-message"><h1>404 Sayfa Bulunamadı!</h1></div>'; 
+  require $pages.'static/footer.php';
+
+
 ?>

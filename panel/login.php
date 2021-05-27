@@ -11,9 +11,13 @@ if ($_SESSION['supporterLogin'] == "on") {
   <title>Canlı Destek Giriş</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="assets/css/panellogin.css" rel="stylesheet">
-  <link href="assets/css/panel.css" rel="stylesheet">
   <link rel="shortcut icon" href="assets/image/livesupportLogo.png">
+  <style>
+    <?php echo file_get_contents('assets/css/panel.css'); ?>
+  </style>
+  <style>
+    <?php echo file_get_contents('assets/css/panellogin.css'); ?>
+  </style>
 </head>
 
 <body>
@@ -38,9 +42,16 @@ if ($_SESSION['supporterLogin'] == "on") {
       </div>
     </div>
   </div>
-  <script src="<?php echo $url; ?>assets/js/jquery.min.js"></script>
-  <script src="<?php echo $url; ?>assets/js/panel-login.js"></script>
-  <script src="<?php echo $url; ?>assets/js/loading.js"></script>
+
+  <script>
+    <?php echo file_get_contents('assets/js/jquery.min.js'); ?>
+  </script>
+  <script>
+    <?php echo file_get_contents('assets/js/panel-login.js'); ?>
+  </script>
+  <script>
+    <?php echo file_get_contents('assets/js/loading.js'); ?>
+  </script>
 </body>
 
 </html>

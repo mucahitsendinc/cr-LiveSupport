@@ -4,7 +4,7 @@
 
 <head>
     <title>ChatRobo</title>
-    <link rel="shortcut icon" href="">
+    <link rel="shortcut icon" href="https://dehasoft.com.tr/assets/img/favicon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
 </head>
@@ -14,7 +14,8 @@
 
 
 
-    <script id="livesupport" src="http://localhost:8080/projeler/ozel/cr-LiveSupport/panel/assets/js/chatrobo.js"></script>
+    <script id="livesupport" src="http://testcanlidestek.deharobotics.net/api.js"></script>
+
 </body>
 
 </html>

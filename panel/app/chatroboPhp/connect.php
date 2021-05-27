@@ -1,8 +1,5 @@
 <?php
-$mysqlsunucu = "localhost";
-$mysqlkullanici = "root";
-$mysqlsifre = "";
-$dbname = "livesupport";
+include !isset($mysqlsunucu) ? 'config.php' : ''; 
 require 'classes/BasicDB.php';
 try {
     $db = new BasicDB($mysqlsunucu, $dbname, $mysqlkullanici, $mysqlsifre);
